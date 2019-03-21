@@ -1,0 +1,48 @@
+mysql database in ubuntu
+------------------------
+$sudo apt-get update
+$	sudo apt-get install mysql-server
+
+//change the mysql password
+$mysql_secure_installation
+
+//check mysql status
+$systemctl status mysql.service
+
+//if mysql is not started start using
+$sudo systemctl start mysql
+
+
+//About mysql
+$mysqladmin -p -u root version
+
+
+//connect to mysql in normal mode
+$mysql -u root -p
+mysql>SHOW DATABASES;
+
+
+//create my sql dump
+ mysql -u root -p DB_name <  sql_filename 
+
+      eg: mysql -u root -p HSS_Reprocessing < hss_stat_anlysis_data.sql 
+
+
+
+//add mysql connecter to intellij spark
+1)Go to Database in the right side menus
+2)click +
+3)select DataSource->mysql
+4)In the window appeared click MySql under Driver option
+	Driver:Mysql
+5)click download mysql
+
+THEN
+1) right click the project
+2)go to 'open module settings'
+3)go to library
+4)click +
+5)select java
+6)give path:/usr/share/java/
+7)select mysql-connector-java-5.1.38.jar folder
+8)click ok

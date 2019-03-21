@@ -1,0 +1,124 @@
+Understand spark theory:https://www.simplilearn.com/apache-spark-scala-course-overview-tutorial-video
+Difference between HDFS and NFS(normal file system):https://www.quora.com/What-are-the-differences-between-HDFS-and-FS-normal-filesystem
+Spark in intellij and HDFS(BEST TO LEARN CONCEPTS):https://hortonworks.com/tutorial/setting-up-a-spark-development-environment-with-scala/
+Spark documentation:https://spark.apache.org/docs/2.4.0/quick-start.html
+
+
+
+
+CREATE A SCALA AND SPARK PROJECT IN INTELLIJ
+----------------------------------
+1)New->project->select scala->select sbt->give project name and location->click finish
+
+Note: After selecting and giving next u can view a window to give project name.In that tick sbt sources, scala sources
+
+FILE STRUCTURE OF INTELLIJ PROJECT
+-----------------------------------
+
+.idea: These are IntelliJ configuration files.
+
+project: Files used during compilation. For example, build.properties allows you to change the SBT version used when compiling your project.
+
+src: Source Code. Most of your code should go into the main directory. The test folder should be reserved for test scripts.
+
+target: When you compile your project it will go here.
+
+build.sbt: The SBT configuration file. We’ll show you how to use this file to import third party libraries and documentation.
+
+SBT
+--
+Before we start writing a Spark Application, we’ll want to import the Spark libraries and documentation into IntelliJ. To perform SBT is used.
+
+
+This is necessary if we want IntelliJ to recognize Spark code. Add the following lines to the file build.sbt:
+-------------------------------------------------------------------------------------------------------------
+name := "HelloScala"
+
+version := "1.0"
+
+scalaVersion := "2.11.12"
+
+// https://mvnrepository.com/artifact/org.apache.spark/spark-core
+libraryDependencies += "org.apache.spark" %% "spark-core" % "2.2.0"
+
+project1
+============
+1)downloaded  shakespeare.txt . Later we’ll want Spark to retrieve this file from HDFS (Hadoop Distributed File System).
+
+
+Start2_NFS.scala
+-----------------
+1)create a scala file called Start2_NFS.scala(Takes file from local machine and prints the total word count and saves (<word>,<word count>) file in specified location)
+		import org.apache.spark.{SparkConf, SparkContext}
+
+		object Start2_NFS extends App {
+		  //Create a SparkContext to initialize Spark
+		  val conf = new SparkConf()
+		  conf.setMaster("local")
+		  conf.setAppName("Word Count")
+		  val sc = new SparkContext(conf)
+
+		  // Load the text into a Spark RDD, which is a distributed representation of each line of text
+		  val textFile = sc.textFile("/home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/src/main/resources/shakespeare.txt")
+
+
+		  //word count
+		  val counts = textFile.flatMap(line => line.split(" "))
+		    .map(word => (word, 1))
+		    .reduceByKey(_ + _)
+
+		  counts.foreach(println)
+		  System.out.println("Total words: " + counts.count());
+		  counts.saveAsTextFile("/home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/src/main/scala/shakespeareWordCount")
+		}
+2)run
+
+start3_DFS.scala(use HDFS(DEPLOYING TO THE SANDBOX))
+------------------------
+Although we’re still running Spark on a single machine, we’ll be using HDFS and YARN (a cluster resource manager), so this will be a closer approximation of running a full distributed cluster than what we’ve done previously.
+
+1)paste this code to the scala file
+
+import org.apache.spark.{SparkConf, SparkContext}
+
+object start3_DFS extends App {
+  //Create a SparkContext to initialize Spark
+  val conf = new SparkConf()
+
+
+  //This tells Spark to run in distributed mode, rather than in local mode.
+  conf.setMaster("YARN")
+  conf.setAppName("Word Count")
+  val sc = new SparkContext(conf)
+
+  // Load the text into a Spark RDD, which is a distributed representation of each line of text
+  val textFile = sc.textFile("hdfs:///tmp/shakespeare.txt")
+
+
+  //word count
+  val counts = textFile.flatMap(line => line.split(" "))
+    .map(word => (word, 1))
+    .reduceByKey(_ + _)
+
+  counts.foreach(println)
+  System.out.println("Total words: " + counts.count());
+  counts.saveAsTextFile("hdfs:///tmp/shakespeareWordCount")
+}
+
+
+2)We are going to package this code into a compiled jar file that can be deployed on the sandbox. A jar is a file that contains both our code and all the dependencies that our code needs to work
+
+	i)First find the path to the projects main folder. Right click on the main file and select Copy Path, now the 		path is copied to your clipboard.
+	ii)next, open a terminal (or cmd) window and change directories to the Path you just copied and run
+		"sbt package"
+	iii)You can also find where the jar is from the output of sbt package.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/project2_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start1$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start1$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start3_DFS$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start3_DFS$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Start2_NFS$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/Start2_NFS$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start1$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start1$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start3_DFS$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start3_DFS$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	check_spark_running.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/check_spark_running.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Start2_NFS.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/Start2_NFS.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Start2_NFS$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/Start2_NFS$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	start3_DFS.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/start3_DFS.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	shakespeare.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/shakespeare.txt[0m
+[0m[[0m[0mdebug[0m] [0m[0m	check_spark_running$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/check_spark_running$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	check_spark_running$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/check_spark_running$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Baby_Names__Beginning_2007.csv[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gawshalini/Documents/learn/spark/spark-with-scala-in-intellij/project2/target/scala-2.12/classes/Baby_Names__Beginning_2007.csv[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
